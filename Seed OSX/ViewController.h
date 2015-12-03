@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import <Firebase/Firebase.h>
+#import <FirebaseOSX/Firebase.h>
 
 @interface ViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 

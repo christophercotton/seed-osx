@@ -28,8 +28,15 @@
 
 - (void)initFirebase {
   // Initialize Firebase reference
+    
+    [[Firebase defaultConfig] setPersistenceEnabled:YES];
+    [Firebase setLoggingEnabled:YES];
+    
   #error Make sure to change "https://<YOUR-FIREBASE-APP>.firebaseio.com" to your Firebase application
   self.ref = [[Firebase alloc] initWithUrl:@"https://<YOUR-FIREBASE-APP>.firebaseio.com"];
+    
+    // just a dummy value to see if it shows up
+    [self.ref setValue:@"Dummy"];
   
   [[self.ref childByAppendingPath:@"messages"] observeEventType:FEventTypeChildAdded
                          andPreviousSiblingKeyWithBlock:^(FDataSnapshot *snapshot,
